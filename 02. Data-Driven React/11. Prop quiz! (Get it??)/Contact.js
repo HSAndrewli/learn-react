@@ -1,32 +1,39 @@
-import React from "react"
-
-export default function Contact(props) {
-    /**
-     * Challenge: Fix the code below to use the `props`
-     * object values in place of the hardcoded values below
-     */
+/**
+ * Challenge: fix the bug, now that we've 
+ * destructured the props object
+ */
+export default function Contact({img, name, phone, email}) {
     return (
-        <div className="contact-card">
-            <img src={props.img}/>
-            <h3>{props.name}</h3>
+        <article className="contact-card">
+            <img
+                src={img}
+                alt="Photo of Mr. Whiskerson"
+            />
+            <h3>{name}</h3>
             <div className="info-group">
-                <img src="./images/phone-icon.png" />
-                <p>{props.phone}</p>
+                <img
+                    src="./images/phone-icon.png"
+                    alt="phone icon"
+                />
+                <p>{phone}</p>
             </div>
             <div className="info-group">
-                <img src="./images/mail-icon.png" />
-                <p>{props.email}</p>
+                <img
+                    src="./images/mail-icon.png"
+                    alt="mail icon"
+                />
+                <p>{email}</p>
             </div>
-        </div>
+        </article>
     )
 }
 
-/* 
-{
-    img: "./images/mr-whiskerson.png", 
-    name: "Mr. Whiskerson", 
-    phone: "(212) 555-1234", 
+const person = {
+    img: "./images/mr-whiskerson.png",
+    name: "Mr. Whiskerson",
+    phone: "(800) 555-1234",
     email: "mr.whiskaz@catnap.meow"
 }
 
-*/
+const {img, name} = person
+console.log(img)

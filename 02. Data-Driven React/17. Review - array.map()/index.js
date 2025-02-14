@@ -4,9 +4,9 @@ Given an array of numbers, return an array of each number, squared
 */
 const nums = [1, 2, 3, 4, 5]
 // -->       [1, 4, 9, 16, 25]
-// Your code here
 
-
+const squaredNums = nums.map(num => num * num)
+console.log(squaredNums)
 
 
 /*
@@ -17,8 +17,9 @@ the first letter of each string is capitalized
 
 const names = ["alice", "bob", "charlie", "danielle"]
 // -->        ["Alice", "Bob", "Charlie", "Danielle"]
-// Your code here
 
+const capitalizedNames = names.map(name => name.charAt(0).toUpperCase() + name.slice(1))
+console.log(capitalizedNames)
 
 
 
@@ -33,6 +34,8 @@ return: ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
 
 const pokemon = ["Bulbasaur", "Charmander", "Squirtle"]
 // -->          ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
-// Your code here
 
 
+
+const wrappedPokemon = pokemon.map(pokemon => `<p>${pokemon}</p>`)
+console.log(wrappedPokemon)
