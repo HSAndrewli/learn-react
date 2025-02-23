@@ -62,3 +62,9 @@ main {
     content: "+";
     margin-right: 5px;
 }
+
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+}
+
