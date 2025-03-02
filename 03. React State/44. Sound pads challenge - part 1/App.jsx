@@ -1,5 +1,5 @@
 import pads from "./pads"
-
+import React from "react"
 export default function App() {
     /**
      * Challenge part 1:
@@ -10,10 +10,25 @@ export default function App() {
      *    (Don't worry about using the "on" or "color" 
      *    properties yet)
      */
+    const [padArray, setPadArray] = React.useState(pads)
+    
+    function playSound(id) {
+        console.log(id)
+    }
+
+    const padElements = padArray.map(pad => (
+        <button key={pad.id} className="pad" onClick={() => playSound(pad.id)}>
+            {pad.color}
+        </button>
+    ))
+    
     return (
         <main>
+            <h1>Sound Pads</h1>
+            <p>Click on a pad to play the sound!</p>
+
             <div className="pad-container">
-                {/* <button>s go here */}
+                {padElements}
             </div>
         </main>
     )

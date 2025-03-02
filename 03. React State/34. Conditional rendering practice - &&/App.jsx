@@ -1,7 +1,7 @@
 import React from "react"
 
 export default function App() {
-    const [unreadMessages, setUnreadMessages] = React.useState(["a", "b"])
+    const [unreadMessages, setUnreadMessages] = React.useState([])
     
     /**
      * Challenge:
@@ -10,7 +10,7 @@ export default function App() {
     
     return (
         <div>
-            <h1>You have _ unread messages!</h1>
+            <h1>{unreadMessages.length > 0 ? `You have ${unreadMessages.length} unread messages!` : "No unread messages"}</h1>
         </div>
     )
 }

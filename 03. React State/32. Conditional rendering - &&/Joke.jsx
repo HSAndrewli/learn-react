@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 export default function Joke(props) {
     /**
      * Challenge:
@@ -5,11 +7,17 @@ export default function Joke(props) {
      * - Add a button that toggles the value back and forth
      */
     
-    console.log(isShown)
+    const [isShown, setIsShown] = useState(false)
+
+    function toggleShown() {
+        setIsShown(prevIsShown => !prevIsShown)
+    }
+
     return (
         <div>
             {props.setup && <h3>{props.setup}</h3>}
-            <p>{props.punchline}</p>
+            {isShown && <p>{props.punchline}</p>}
+            <button onClick={toggleShown}>{isShown ? "Hide punchline" : "Show punchline"}</button>
             <hr />
         </div>
     )

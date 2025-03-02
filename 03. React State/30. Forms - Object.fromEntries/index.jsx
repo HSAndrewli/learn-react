@@ -9,7 +9,12 @@ function App() {
 
   function signUp(formData) {
     const data = Object.fromEntries(formData)
-    const dietaryData = 
+    const dietaryRestrictions = formData.getAll("dietaryRestrictions")
+    const allData = {
+      ...data,
+      dietaryRestrictions
+    }
+    console.log(allData)
   }
 
   return (
